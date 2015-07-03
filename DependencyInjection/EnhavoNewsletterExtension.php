@@ -13,7 +13,7 @@ use Enhavo\Bundle\AdminBundle\DependencyInjection\SyliusResourceExtension;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class enhavoNewsletterExtension extends SyliusResourceExtension
+class EnhavoNewsletterExtension extends SyliusResourceExtension
 {
     // You can choose your application name, it will use to prefix the configuration keys in the container (the default value is sylius).
     protected $applicationName = 'enhavo_newsletter';
