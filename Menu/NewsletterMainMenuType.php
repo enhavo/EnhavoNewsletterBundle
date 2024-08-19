@@ -8,15 +8,14 @@
 
 namespace Enhavo\Bundle\NewsletterBundle\Menu;
 
-use Enhavo\Bundle\AppBundle\Menu\Menu\ListMenu;
+use Enhavo\Bundle\AppBundle\Menu\AbstractMenuType;
+use Enhavo\Bundle\AppBundle\Menu\Type\ListMenuType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class NewsletterMainMenu extends ListMenu
+class NewsletterMainMenuType extends AbstractMenuType
 {
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
-        parent::configureOptions($resolver);
-
         $resolver->setDefaults([
             'icon' => 'markunread',
             'label' => 'newsletter.label.newsletter',
@@ -35,8 +34,13 @@ class NewsletterMainMenu extends ListMenu
         ]);
     }
 
-    public function getType()
+    public static function getName(): ?string
     {
         return 'newsletter';
+    }
+
+    public static function getParentType(): ?string
+    {
+        return ListMenuType::class;
     }
 }
